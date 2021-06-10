@@ -1,7 +1,7 @@
 import turtle
 import time
 import random
-
+import copy
 
 def make_grid(height):
     # make a 2d array with all filled with 0
@@ -117,7 +117,7 @@ def main():
         window.update()
 
         cells = populate_cell(grid, edge, cells)
-        grid_copy=grid
+        grid_copy = copy.deepcopy(grid)
         sum = neighbour_check(grid, 1, 0)
         
         grid = rules(grid, sum, grid_copy)
